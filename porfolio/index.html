@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cb39fe8ef6.js" crossorigin="anonymous"></script>
+    <title>Portfolio | Din Sabic</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1><a href="index.html">Din <span>S.</span></a></h1>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closemenu()" ></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>IMS Student</p>
+                <h1>Hi, Ich bin <span><br>Din Sabic</span></h1>
+            </div>
+        </div>
+    </div>
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/Din-172.jpg" alt="Full picture of me">        
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Ich bin Din Sabic, ein 17-jähriger IMS-Schüler an der Kantonsschule am Brühl. Ich verfolge meine Interessen in den Bereichen Programmieren und Sport mit Leidenschaft und Hingabe. Ich bin motiviert und angetrieben, meine Fähigkeiten und Fertigkeiten ständig zu verbessern und zu erweitern.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">My Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab fade-in" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designnen Web Interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents fade-in" id="education">
+                        <ul>
+                            <li><span>2021-Jetzt</span><br>Informatikmittelschule / Kantonsschule am Brühl</li>
+                            <li><span>Sommer 2023</span><br>Sprachaufenthalt Englisch</li>
+                            <li><span>2018-2021</span><br>Sekundarschule Bürgli</li>
+                            <li><span>2012-2018</span><br>Primarschule Riethüsli</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Meine Arbeit</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="img/BP_Auftrag.png" alt="Berufspraktikum Auftrag">
+                    <div class="layer">
+                        <h3>Berufspraktikum Auftrag</h3>
+                        <p>A simple website with different templates, which was made with the Vue.js framework</p>
+                        <a href="https://github.com/lilZ0MZ/berufspraktikum-projekt"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/Crashcourse.png" alt="Crashcourse aus V293">
+                    <div class="layer">
+                        <h3>CrashCourse V293</h3>
+                        <p>A CrashCourse I did in class. Showing a possible responsive website.</p>
+                        <a href="https://din-sabic.ch/crashcourse/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/Elden-Ring-API.png" alt="Elden Ring API">
+                    <div class="layer">
+                        <h3>Elden Ring API</h3>
+                        <p>A Project I made with my schoolmate, where the code gets data from an API and shows them on our website.</p>
+                        <a href="https://din-sabic.ch/eldenring-api/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/lilZ0MZ" class="btn">See More</a>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><a href="mailto:din.sabic@ksb-sg.ch"><i class="fa-solid fa-paper-plane"></i> din.sabic@ksb-sg.ch</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/din.sg05"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/din.sabic.756"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/din-sabic-250b27264/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright ©2023 Din</p>
+        </div>
+    </div>
+
+<script>
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname) {
+    for(tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+
+window.addEventListener("load", function() {
+        document.querySelector("body").style.display = "block";
+      });
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwHwCON_5Ln2MpW9EuH9fzhU7O1_1K6qoJHknWebDtarUCJA4fSGyJ4Xc9J8U_lR2t7/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function (){
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
